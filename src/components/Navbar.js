@@ -1,23 +1,27 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import {
     TopAppBar,
     TopAppBarRow,
     TopAppBarSection,
     TopAppBarNavigationIcon,
-    TopAppBarActionItem,
-    TopAppBarTitle
+    TopAppBarFixedAdjust
 } from '@rmwc/top-app-bar';
 
 export default class Navbar extends Component {
     render() {
         return (
-            <TopAppBar>
-                <TopAppBarRow>
-                    <TopAppBarSection>
-                        <TopAppBarNavigationIcon icon="menu" />
-                    </TopAppBarSection>
-                </TopAppBarRow>
-            </TopAppBar>
+            <Fragment>
+                <TopAppBar>
+                    <TopAppBarRow>
+                        <TopAppBarSection>
+                            <TopAppBarNavigationIcon icon="menu" />
+                        </TopAppBarSection>
+                    </TopAppBarRow>
+                </TopAppBar>
+                <TopAppBarFixedAdjust>
+                    {this.props.children}
+                </TopAppBarFixedAdjust>
+            </Fragment>
         )
     }
 }
